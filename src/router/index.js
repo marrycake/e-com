@@ -5,27 +5,43 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/home'
+      component: () => import('../views/tabbar/TabBar.vue'),
+      children: [
+        {
+          path: '/',
+          redirect: '/home'
+        },
+        {
+          path: 'home',
+          name: 'home',
+          component: () => import('../views/tabbar/home/HomeView.vue')
+        },
+        {
+          path: 'category',
+          name: 'category',
+          component: () => import('../views/tabbar/category/CategoryView.vue')
+        },
+        {
+          path: 'cart',
+          name: 'cart',
+          component: () => import('../views/tabbar/shopingcart/CartView.vue')
+        },
+        {
+          path: 'owner',
+          name: 'owner',
+          component: () => import('../views/tabbar/owner/OwnerView.vue')
+        }
+      ]
     },
     {
-      path: '/home',
-      name: 'home',
-      component: () => import('../views/home/HomeView.vue')
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/Login/LoginView.vue')
     },
     {
-      path: '/category',
-      name: 'category',
-      component: () => import('../views/category/CategoryView.vue')
-    },
-    {
-      path: '/cart',
-      name: 'cart',
-      component: () => import('../views/shopingcart/CartView.vue')
-    },
-    {
-      path: '/owner',
-      name: 'owner',
-      component: () => import('../views/owner/OwnerView.vue')
+      path: '/detail',
+      name: 'detail',
+      component: () => import('../views/Detail/DetailView.vue')
     },
     {
       path: '/about',

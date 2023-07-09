@@ -1,5 +1,7 @@
 <script setup></script>
 
 <template>
-  <RouterView />
+  <div>购物车</div>
 </template>
+
+<style scoped></style>
