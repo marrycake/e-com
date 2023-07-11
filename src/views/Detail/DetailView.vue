@@ -2,7 +2,7 @@
 import { onMounted, reactive, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { showToast } from 'vant'
-import axios from '../api/axios'
+import axios from '../../api/axios'
 const router = useRouter()
 let route = useRoute()
 const showShare = ref(false)

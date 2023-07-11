@@ -1,5 +1,6 @@
 <script setup>
 import { useRoute } from 'vue-router'
+import router from '../router'
 const route = useRoute()
 console.log(route)
 // 定义变量去接收父组件的传值
@@ -9,7 +10,16 @@ defineProps({
 </script>
 <template>
   <div class="good-list">
-    <div class="good-list-item" v-for="item in list" :key="item.id">
+    <div
+      class="good-list-item"
+      v-for="item in list"
+      :key="item.id"
+      @click="
+        () => {
+          router.push('/detail?id=' + item.id)
+        }
+      "
+    >
       <div class="good-img">
         <img :src="item.image" alt="" />
       </div>
